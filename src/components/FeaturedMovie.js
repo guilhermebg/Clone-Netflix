@@ -1,5 +1,4 @@
 import React from "react";
-import { isDOMComponentElement } from "react-dom/cjs/react-dom-test-utils.production.min";
 import './FeaturedMovie.css'
 
 export default ({item}) =>{
