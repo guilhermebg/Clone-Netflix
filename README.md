@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# :fire: Clone do NETFLIX em REACT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_By Bonieky Lacerda_
 
-## Available Scripts
+> **https://www.youtube.com/watch?v=tBweoUiMsDg**
 
-In the project directory, you can run:
 
-### `npm start`
+## :pen: API - JSON - Test API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> **API para base de dados de filmes e séries**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-  [x] **https://www.themoviedb.org** 
 
-### `npm test`
+> **Manipular JSON**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] **http://jsonviewer.stack.hu** 
 
-### `npm run build`
+> **Testar Requisições**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] **http://resttesttest.com** 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> **Ícones do Material-UI**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] **https://material-ui.com/pt/components/material-icons/**
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## :tv: Projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Esse projeto trata-se de uma simples reprodução do **NetFlix** para estudo de React, não contem todas as funcionalidades. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para a área de destaque e lista de filmes e séries foi usado a API do **themoviedb**.
 
-## Learn More
+### :paperclip: **1. Criando e Adicionando Ícones**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+$ npx create-react-app netflixclone
+$ cd netflixclone
+$ npm install @material-ui/core @material-ui/icons
+$ npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### :paperclip: **2. Estrutura de arquivos e pastas**
 
-### Code Splitting
+```bash
+$ src
+	$ components
+		FeaturedMovie.css
+		FeaturedMovie.js
+		Header.css
+		Header.js
+		MovieRow.css
+		MovieRow.js
+	App.css
+	App.js
+	index.css
+	index.js
+	Tmdb.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### :computer: App.js
 
-### Analyzing the Bundle Size
+A tela principal foi dividida em **03 componentes**: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Cabeçario - **<Header />**
+* Destaque - **<FeaturedMovie />**
+* Lista de Filmes e Séries - **<MovieRow />**
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### :paperclip: ​Tmdb.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Este arquivo contém a comunicação com a **API** do *themoviedb.org* que devolve um catalogo onde encontramos informações de filmes e séries.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### :paperclip: Header
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este componente serve apenas para compor a tela principal. Contem apenas o **logo** e **ícone** do usuário logado, não possui eventos.
+
+
+
+### :paperclip: FeaturedMovie
+
+Este componente é responsavel por mostrar um filme ou uma série em destaque. 
+
+Informando: *pontuação*, *ano de lançamento*, *total de temporadas* e *uma breve descrição*.
+
+Toda vez que a página é carregada muda o destaque.
+
+
+
+### :paperclip: **MovieRow**
+
+Este componente é responsavel por mostrar as listas de:
+
+* Originais da netflix;
+* Recomendados ***trending***;
+* Em alta ***melhores votados - top rated***
+* Ação
+* Comédia
+* Terror
+* Romance
+* Documentários
+
